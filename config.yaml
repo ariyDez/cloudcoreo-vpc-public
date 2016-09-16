@@ -2,16 +2,16 @@ variables:
     VPC_NAME:
         required: true
         description: the name of the VPC
-        default: 'test-vpc'
+        default: 'gjm-test-vpc'
     VPC_OCTETS:
         required: true
         description: the /16 net of the VPC to look for - i.e 123.123.0.0
-        default: '10.11.0.0'
+        default: '10.149.0.0'
     PUBLIC_SUBNET_NAME:
         required: true
         description: the cloudcoreo name of the public vpc subnets
-        default: test-public-subnet
+        default: gjm-test-public-subnet
     PUBLIC_ROUTE_NAME:
         required: true
         description: the name to give to the public route
-        default: test-public-route
+        default: gjm-test-public-route
