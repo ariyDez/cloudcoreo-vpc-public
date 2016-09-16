@@ -15,3 +15,6 @@ variables:
         required: true
         description: the name to give to the public route
         default: gjm-test-public-route
+    REGION_1:
+        required: true
+        description: the name of the primary region
