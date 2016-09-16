@@ -13,6 +13,7 @@ coreo_aws_vpc_vpc "${VPC_NAME}" do
   action :sustain
   cidr "${VPC_OCTETS}/16"
   internet_gateway true
+  region "${REGION_1}"
 end
 
 
@@ -27,6 +28,7 @@ coreo_aws_vpc_routetable "${PUBLIC_ROUTE_NAME}" do
              { :from => "0.0.0.0/0", :to => "${VPC_NAME}", :type => :igw }
         ]
   number_of_tables 1
+  region "${REGION_1}"
 end
 
 
@@ -43,4 +45,17 @@ coreo_aws_vpc_subnet "${PUBLIC_SUBNET_NAME}" do
   route_table "${PUBLIC_ROUTE_NAME}"
   vpc "${VPC_NAME}"
   map_public_ip_on_launch true
+  region "${REGION_1}"
+end
+
+coreo_uni_util_notify "send-instance-vars" do
+  action :notify
+  type 'email'
+  allow_empty ${AUDIT_AWS_ALLOW_EMPTY}
+  send_on "${AUDIT_AWS_SEND_ON}"
+  payload 'stack_name: INSTANCE::stack_name, name: INSTANCE::name, run_id: INSTANCE::run_id, revision: INSTANCE::revision, id: INSTANCE::id, region: INSTANCE::region'
+  payload_type "text"
+  endpoint ({ 
+              :to => '${SEND_TO}'
+            })
 end
