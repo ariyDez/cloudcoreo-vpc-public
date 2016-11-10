@@ -13,7 +13,6 @@ coreo_aws_vpc_vpc "${VPC_NAME}${SUFFIX}" do
   action :sustain
   cidr "${VPC_OCTETS}/16"
   internet_gateway true
-  region "${REGION}"
   tags ${VPC_TAGS}
 end
 
@@ -29,7 +28,6 @@ coreo_aws_vpc_routetable "${PUBLIC_ROUTE_NAME}${SUFFIX}" do
              { :from => "0.0.0.0/0", :to => "${VPC_NAME}${SUFFIX}", :type => :igw }
         ]
   number_of_tables 1
-  region "${REGION}"
 end
 
 
@@ -46,5 +44,4 @@ coreo_aws_vpc_subnet "${PUBLIC_SUBNET_NAME}${SUFFIX}" do
   route_table "${PUBLIC_ROUTE_NAME}${SUFFIX}"
   vpc "${VPC_NAME}${SUFFIX}"
   map_public_ip_on_launch true
-  region "${REGION}"
 end

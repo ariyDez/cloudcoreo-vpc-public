@@ -10,7 +10,7 @@ variables:
     REGION:
         required: true
         description: use default except for multiple region use cases
-        default: "INSTANCE::region"
+        default: "PLAN::region"
         type: string
     PUBLIC_ROUTE_NAME:
         required: true
