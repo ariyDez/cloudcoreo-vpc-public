@@ -16,10 +16,7 @@ variables:
         required: true
         description: the name to give to the public route
         default: test-public-route
-    PUBLIC_SUBNET_NAME:
-        required: true
-        description: the cloudcoreo name of the public vpc subnets
-        default: test-public-subnet
+    PUBLIC
     SUFFIX:
         required: false
         description: when used will use the value to suffix the names of all converged objects

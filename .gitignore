@@ -10,5 +10,6 @@ webapp/node_modules/
 Gitane/*
 webapp/Gitane
 webapp/node_modules
+.idea/
 *.gem
 engine/.chef/cookbooks/coreo/recipes/config.rb
