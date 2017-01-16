@@ -33,4 +33,4 @@ variables:
         required: true
         description: How many public subnets to create
         type: number
-        default: 3
+        default: 2
