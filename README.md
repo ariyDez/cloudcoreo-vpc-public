@@ -44,7 +44,7 @@ This [CloudCoreo](http://www.cloudcoreo.com) repository will create a VPC with p
 
 ### `PUBLIC_SUBNET_NUM_ZONES`:
   * description: How many public subnets to create
-  * default: 3
+  * default: 2
 
 
 ## Optional variables with default
