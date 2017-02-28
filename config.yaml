@@ -18,7 +18,7 @@ variables:
         default: test-public-route
     PUBLIC
     SUFFIX:
-        required: false
+        required false
         description: when used will use the value to suffix the names of all converged objects
         type: string
     VPC_TAGS:
