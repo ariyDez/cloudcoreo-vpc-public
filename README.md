@@ -47,12 +47,12 @@ This [CloudCoreo](http://www.cloudcoreo.com) repository will create a VPC with p
   * default: 3
 
 
-## Optional variables with no default
+## Optional variables with default
 
 **None**
 
 
-## Optional variables with default
+## Optional variables with no default
 
 ### `SUFFIX`:
   * description: when used will use the value to suffix the names of all converged objects
@@ -75,6 +75,6 @@ This [CloudCoreo](http://www.cloudcoreo.com) repository will create a VPC with p
 
 
 ## Icon
-
+![icon](https://raw.githubusercontent.com/CloudCoreo/cloudcoreo-vpc-public/master/images/icon.png "icon")
 
 
