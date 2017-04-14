@@ -19,21 +19,6 @@ end
 
 
 ######################################################################
-## create a routetable for the public subnet, route everything
-## to the internet gateway
-######################################################################
-coreo_aws_vpc_routetable "${PUBLIC_ROUTE_NAME}${SUFFIX}" do
-  action :sustain
-  vpc "${VPC_NAME}${SUFFIX}"
-  routes [
-             { :from => "0.0.0.0/0", :to => "${VPC_NAME}${SUFFIX}", :type => :igw }
-        ]
-  number_of_tables 1
-  region "${REGION}"
-end
-
-
-######################################################################
 ## number_of_zones
 ##   cidr will be split up among all zones specified in "number_of_zones"
 ## percent_of_vpc_allocated
