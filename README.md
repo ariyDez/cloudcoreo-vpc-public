@@ -30,7 +30,7 @@ This [CloudCoreo](http://www.cloudcoreo.com) repository will create a VPC with p
 
 ### `REGION`:
   * description: use default except for multiple region use cases
-  * default: INSTANCE::region
+  * default: PLAN::region
 
 ### `PUBLIC_ROUTE_NAME`:
   * description: the name to give to the public route
@@ -42,16 +42,23 @@ This [CloudCoreo](http://www.cloudcoreo.com) repository will create a VPC with p
   * default: test-public-subnet
 
 
-
-## Optional variables with no default
-
-**None**
+### `PUBLIC_SUBNET_NUM_ZONES`:
+  * description: How many public subnets to create
+  * default: 3
 
 
 ## Optional variables with default
 
+**None**
+
+
+## Optional variables with no default
+
 ### `SUFFIX`:
   * description: when used will use the value to suffix the names of all converged objects
+
+### `VPC_TAGS`:
+  * description: tags to apply to the vpc
 
 ## Tags
 1. Network
@@ -68,6 +75,6 @@ This [CloudCoreo](http://www.cloudcoreo.com) repository will create a VPC with p
 
 
 ## Icon
-
+![icon](https://raw.githubusercontent.com/CloudCoreo/cloudcoreo-vpc-public/master/images/icon.png "icon")
 
 

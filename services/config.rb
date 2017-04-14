@@ -14,21 +14,7 @@ coreo_aws_vpc_vpc "${VPC_NAME}${SUFFIX}" do
   cidr "${VPC_OCTETS}/16"
   internet_gateway true
   region "${REGION}"
-end
-
-
-######################################################################
-## create a routetable for the public subnet, route everything
-## to the internet gateway
-######################################################################
-coreo_aws_vpc_routetable "${PUBLIC_ROUTE_NAME}${SUFFIX}" do
-  action :sustain
-  vpc "${VPC_NAME}${SUFFIX}"
-  routes [
-             { :from => "0.0.0.0/0", :to => "${VPC_NAME}${SUFFIX}", :type => :igw }
-        ]
-  number_of_tables 1
-  region "${REGION}"
+  tags ${VPC_TAGS}
 end
 
 
@@ -40,7 +26,7 @@ end
 ######################################################################
 coreo_aws_vpc_subnet "${PUBLIC_SUBNET_NAME}${SUFFIX}" do
   action :sustain
-  number_of_zones 3
+  number_of_zones ${PUBLIC_SUBNET_NUM_ZONES}
   percent_of_vpc_allocated 25
   route_table "${PUBLIC_ROUTE_NAME}${SUFFIX}"
   vpc "${VPC_NAME}${SUFFIX}"
